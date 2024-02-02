@@ -6,7 +6,8 @@ public class Driver
 {
     public static void Main()
     {
-
+        //This Game was written by group 4-9 (James, Nick, Thomas, Sawyer)
+        //you can play tic tac toe in it!
        
         Console.WriteLine("Welcome to Tic Tac Toe!");
 
@@ -43,8 +44,6 @@ public class Driver
             playerChoice = Console.ReadLine();
             char letterChoice = playerChoice[0];
             char numberChoice = playerChoice[1];
-
-            
 
             if ((letterChoice == 97 || letterChoice == 98 || letterChoice == 99) && (numberChoice > 48 && numberChoice < 52))
             {
