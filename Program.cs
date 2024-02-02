@@ -29,10 +29,11 @@ public class Driver
         {
             Console.WriteLine("Player " + (I + 1) + "s Turn (e.g. a1, b3");
             playerChoice = Console.ReadLine();
-            char letterChoice = playerChoice[0];
-            char numberChoice = playerChoice[1];
-
             
+
+                char letterChoice = playerChoice[0];
+                char numberChoice = playerChoice[1];
+
 
             if ((letterChoice == 97 || letterChoice == 98 || letterChoice == 99) && (numberChoice > 48 && numberChoice < 52))
             {
@@ -89,8 +90,6 @@ public class Driver
             {
                 Console.WriteLine("Invalid guess try again");
             }
-
-
         } while (!done);
 
     }
