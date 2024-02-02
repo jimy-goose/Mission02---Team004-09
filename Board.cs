@@ -58,32 +58,136 @@ namespace Mission02___Team004_09
             string scen6 = theBoard[2] + theBoard[5] + theBoard[8];
             string scen7 = theBoard[0] + theBoard[4] + theBoard[8];
             string scen8 = theBoard[2] + theBoard[4] + theBoard[6];
+            int whatScen = 0;
 
             if (scen1 == "XXX" || scen1 == "OOO")
             {
                 over = true;
+                whatScen = 1;
             }
             else if (scen2 == "XXX" || scen2 == "OOO")
             {
                 over = true;
-            } else if (scen3 == "XXX" || scen3 == "OOO")
+                whatScen = 2;
+
+            }
+            else if (scen3 == "XXX" || scen3 == "OOO")
             {
                 over = true;
-            } else if (scen4 == "XXX" || scen4 == "OOO")
+                whatScen = 3;
+
+            }
+            else if (scen4 == "XXX" || scen4 == "OOO")
             {
                 over = true;
-            } else if (scen5 == "XXX" || scen5 == "OOO")
+                whatScen = 4;
+
+            }
+            else if (scen5 == "XXX" || scen5 == "OOO")
             {
                 over = true;
-            } else if (scen6 == "XXX" || scen6 == "OOO")
+                whatScen = 5;
+
+            }
+            else if (scen6 == "XXX" || scen6 == "OOO")
             {
                 over = true;
-            } else if (scen7 == "XXX" || scen7 == "OOO")
+                whatScen = 6;
+
+            }
+            else if (scen7 == "XXX" || scen7 == "OOO")
             {
                 over = true;
-            } else if (scen8 == "XXX" || scen8 == "OOO")
+                whatScen = 7;
+
+            }
+            else if (scen8 == "XXX" || scen8 == "OOO")
             {
                 over = true;
+                whatScen = 8;
+
+            }
+            //who won?
+            if (whatScen == 1)
+            {
+                if (scen1 == "OOO")
+                {
+                    Console.WriteLine("O's won");
+                }
+                else
+                {
+                    Console.WriteLine("X's won");
+                }
+            } else if (whatScen == 2)
+            {
+                if (scen2 == "OOO")
+                {
+                    Console.WriteLine("O's won");
+                }
+                else
+                {
+                    Console.WriteLine("X's won");
+                }
+            } else if (whatScen ==3)
+            {
+                if (scen3 == "OOO")
+                {
+                    Console.WriteLine("O's won");
+                }
+                else
+                {
+                    Console.WriteLine("X's won");
+                }
+            } else if (whatScen == 4)
+            {
+                if (scen4 == "OOO")
+                {
+                    Console.WriteLine("O's won");
+                }
+                else
+                {
+                    Console.WriteLine("X's won");
+                }
+            } else if (whatScen == 5)
+            {
+                if (scen5 == "OOO")
+                {
+                    Console.WriteLine("O's won");
+                }
+                else
+                {
+                    Console.WriteLine("X's won");
+                }
+            } else if (whatScen == 6)
+            {
+                if (scen6 == "OOO")
+                {
+                    Console.WriteLine("O's won");
+                }
+                else
+                {
+                    Console.WriteLine("X's won");
+                }
+            } else if (whatScen == 7)
+            {
+                if (scen7 == "OOO")
+                {
+                    Console.WriteLine("O's won");
+                }
+                else
+                {
+                    Console.WriteLine("X's won");
+                }
+            } else if (whatScen == 8)
+            {
+                if (scen8 == "OOO")
+                {
+                    Console.WriteLine("O's won");
+                }
+                else
+                {
+                    Console.WriteLine("X's won");
+                }
             }
 
             return over;
