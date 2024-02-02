@@ -20,9 +20,9 @@ namespace Mission02___Team004_09
             for (int i = 0; i < theBoard.Length; i++)
             {
                 if (i == 3 || i == 6) { output += "\n"; }
-                if (i == 0) {  output += "A "; }
-                if (i == 3) { output += "B "; }
-                if (i == 6) { output += "C "; }
+                if (i == 0) {  output += "a "; }
+                if (i == 3) { output += "b "; }
+                if (i == 6) { output += "c "; }
                 if (theBoard[i] == null)
                 {
                     if (i == 0 || i == 1 || i == 3 || i == 4)
