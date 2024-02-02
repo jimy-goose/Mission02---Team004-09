@@ -8,10 +8,18 @@ public class Driver
     {
 
        
-        Console.WriteLine("Welecome to Tic Tac Toe");
+        Console.WriteLine("Welcome to Tic Tac Toe!");
 
         string[] board = new string[9];
         string[] guessed = new string[9];
+        for (int i = 0; i < 6; i++)
+        {
+            board[i] = "_";
+        }
+        for (int i = 6; i < 9; i++)
+        {
+            board[i] = " ";
+        }
 
         Board b = new Board(board);
 
@@ -25,16 +33,20 @@ public class Driver
         int I = 0;
         int cell = 0;
         int guesser = 0;
+        Console.WriteLine("  1 2 3");
+        Console.WriteLine("a _|_|_");
+        Console.WriteLine("b _|_|_");
+        Console.WriteLine("c  | | ");
         do
         {
-            Console.WriteLine("Player" + (I +1) + "s Turn (e.g. a1, b3");
+            Console.WriteLine("Player " + (I +1) + "'s Turn. Please enter where you would like to play." + "(e.g. a1, b3");
             playerChoice = Console.ReadLine();
             char letterChoice = playerChoice[0];
             char numberChoice = playerChoice[1];
             
             int intNumberChoice = int.Parse(numberChoice.ToString());
 
-            if (letterChoice == 97 || letterChoice == 98 || letterChoice == 99 && numberChoice > 48 && numberChoice < 52)
+            if ((letterChoice == 97 || letterChoice == 98 || letterChoice == 99) && (numberChoice > 48 && numberChoice < 52))
             {
                 if (Array.IndexOf(guessed, playerChoice) != -1)
                 {
@@ -60,9 +72,7 @@ public class Driver
                         guessed[guesser] = playerChoice;
                         board[cell] = "X";
                         Console.WriteLine(b.ChangeBoard(board));
-                        Console.ReadLine();
                         I += 1;
-                        Console.WriteLine(b.checkBoard(board));
                         if(b.checkBoard(board) == true)
                         {
                             Console.WriteLine("Yay! Player " + (I) + " Wins");
@@ -76,9 +86,7 @@ public class Driver
                         guessed[cell] = playerChoice;
                         board[cell] = "O";
                         Console.WriteLine(b.ChangeBoard(board));
-                        Console.ReadLine();
                         I -= 1;
-                        Console.WriteLine(b.checkBoard(board));
                         if (b.checkBoard(board) == true)
                         {
                             Console.WriteLine("Yay! Player " + (I + 2) + " Wins");
@@ -96,7 +104,7 @@ public class Driver
                
 
         } while (!done);
-        
+        Console.ReadLine();
     }
    
 }
