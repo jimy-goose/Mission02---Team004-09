@@ -59,29 +59,29 @@ namespace Mission02___Team004_09
             string scen7 = theBoard[0] + theBoard[4] + theBoard[8];
             string scen8 = theBoard[2] + theBoard[4] + theBoard[6];
 
-            if (scen1 == "xxx" || scen1 == "ooo")
+            if (scen1 == "XXX" || scen1 == "OOO")
             {
                 over = true;
             }
-            else if (scen2 == "xxx" || scen2 == "ooo")
+            else if (scen2 == "XXX" || scen2 == "OOO")
             {
                 over = true;
-            } else if (scen3 == "xxx" || scen3 == "ooo")
+            } else if (scen3 == "XXX" || scen3 == "OOO")
             {
                 over = true;
-            } else if (scen4 == "xxx" || scen4 == "ooo")
+            } else if (scen4 == "XXX" || scen4 == "OOO")
             {
                 over = true;
-            } else if (scen5 == "xxx" || scen5 == "ooo")
+            } else if (scen5 == "XXX" || scen5 == "OOO")
             {
                 over = true;
-            } else if (scen6 == "xxx" || scen6 == "ooo")
+            } else if (scen6 == "XXX" || scen6 == "OOO")
             {
                 over = true;
-            } else if (scen7 == "xxx" || scen7 == "ooo")
+            } else if (scen7 == "XXX" || scen7 == "OOO")
             {
                 over = true;
-            } else if (scen8 == "xxx" || scen8 == "ooo")
+            } else if (scen8 == "XXX" || scen8 == "OOO")
             {
                 over = true;
             }

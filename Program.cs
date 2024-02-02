@@ -1,10 +1,19 @@
-﻿public class Driver
+﻿using Mission02___Team004_09;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+
+public class Driver
 {
     public static void Main()
     {
+
+       
         Console.WriteLine("Welecome to Tic Tac Toe");
 
         string[] board = new string[9];
+        string[] guessed = new string[9];
+
+        Board b = new Board(board);
 
         string playerChoice = "";
 
@@ -12,28 +21,82 @@
 
         bool done = false;
 
+        // Set Counter Variables
+        int I = 0;
+        int cell = 0;
+        int guesser = 0;
         do
         {
-            Console.WriteLine("Player 1's Turn");
-            string p1Choice = Console.ReadLine();
+            Console.WriteLine("Player" + (I +1) + "s Turn (e.g. a1, b3");
+            playerChoice = Console.ReadLine();
+            char letterChoice = playerChoice[0];
+            char numberChoice = playerChoice[1];
+            
+            int intNumberChoice = int.Parse(numberChoice.ToString());
 
-            if (p1Choice == "a1")
+            if (letterChoice == 97 || letterChoice == 98 || letterChoice == 99 && numberChoice > 48 && numberChoice < 52)
             {
-                board[0] = "x";
+                if (Array.IndexOf(guessed, playerChoice) != -1)
+                {
 
+                    Console.WriteLine("Invalid guess try again");
+                }
+                else
+                {
+                    if (letterChoice == 97)
+                    {
+                        cell = intNumberChoice - 1;
+                    }
+                    if (letterChoice == 98)
+                    {
+                        cell = intNumberChoice + 2;
+                    }
+                    if (letterChoice == 99)
+                    {
+                        cell = intNumberChoice + 5;
+                    }
+                    if (I == 0)
+                    {
+                        guessed[guesser] = playerChoice;
+                        board[cell] = "X";
+                        Console.WriteLine(b.ChangeBoard(board));
+                        Console.ReadLine();
+                        I += 1;
+                        Console.WriteLine(b.checkBoard(board));
+                        if(b.checkBoard(board) == true)
+                        {
+                            Console.WriteLine("Yay! Player " + (I) + " Wins");
+                            done = true;
+                        }
+
+                    }
+                    else if (I == 1)
+                    {
+                        guessed[guesser] = playerChoice;
+                        guessed[cell] = playerChoice;
+                        board[cell] = "O";
+                        Console.WriteLine(b.ChangeBoard(board));
+                        Console.ReadLine();
+                        I -= 1;
+                        Console.WriteLine(b.checkBoard(board));
+                        if (b.checkBoard(board) == true)
+                        {
+                            Console.WriteLine("Yay! Player " + (I + 2) + " Wins");
+                            done = true;
+                        }
+                    }
+                    guesser++;
+                    
+                }
             }
-            
-
-            
-            Console.WriteLine(printboard());
-            done, winnerName = CheckBoard();
-            
-            Console.WriteLine("Player 2's Turn");
-            string p2Choice = Console.ReadLine();
-            Console.WriteLine(printboard());
-            done, winnerName = CheckBoard();
+            else
+            {
+                Console.WriteLine("Invalid guess try again");
+            }
+               
 
         } while (!done);
         
     }
+   
 }
