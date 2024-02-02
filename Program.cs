@@ -43,8 +43,8 @@ public class Driver
             playerChoice = Console.ReadLine();
             char letterChoice = playerChoice[0];
             char numberChoice = playerChoice[1];
+
             
-            int intNumberChoice = int.Parse(numberChoice.ToString());
 
             if ((letterChoice == 97 || letterChoice == 98 || letterChoice == 99) && (numberChoice > 48 && numberChoice < 52))
             {
@@ -55,6 +55,7 @@ public class Driver
                 }
                 else
                 {
+                    int intNumberChoice = int.Parse(numberChoice.ToString());
                     if (letterChoice == 97)
                     {
                         cell = intNumberChoice - 1;
@@ -75,10 +76,8 @@ public class Driver
                         I += 1;
                         if(b.checkBoard(board) == true)
                         {
-                            Console.WriteLine("Yay! Player " + (I) + " Wins");
                             done = true;
                         }
-
                     }
                     else if (I == 1)
                     {
@@ -89,22 +88,21 @@ public class Driver
                         I -= 1;
                         if (b.checkBoard(board) == true)
                         {
-                            Console.WriteLine("Yay! Player " + (I + 2) + " Wins");
                             done = true;
                         }
                     }
                     guesser++;
-                    
+
                 }
             }
             else
             {
                 Console.WriteLine("Invalid guess try again");
             }
-               
+
 
         } while (!done);
         Console.ReadLine();
     }
-   
+
 }
