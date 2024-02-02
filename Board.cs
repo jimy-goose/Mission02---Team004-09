@@ -16,22 +16,33 @@ namespace Mission02___Team004_09
         public string ChangeBoard(string[] theBoard)
         {
 
-            string output = "";
+            string output = "  1 2 3\n";
             for (int i = 0; i < theBoard.Length; i++)
             {
                 if (i == 3 || i == 6) { output += "\n"; }
-                if (theBoard[i] == "")
+                if (i == 0) {  output += "A "; }
+                if (i == 3) { output += "B "; }
+                if (i == 6) { output += "C "; }
+                if (theBoard[i] == null)
                 {
-                    if (i == 0 || i == 1 || i == 3 || i == 4 || i == 6 || i == 7)
+                    if (i == 0 || i == 1 || i == 3 || i == 4)
                     {
                         output += "_|";
+                    }
+                    else if (i == 6 || i == 7)
+                    {
+                        output += " |";
+                    }
+                    else if (i == 8)
+                    {
+                        output += "";
                     }
                     else
                     {
                         output += "_";
                     }
                 }
-                else 
+                else
                 {
                     if (i == 0 || i == 1 || i == 3 || i == 4 || i == 6 || i == 7)
                     {
@@ -43,7 +54,7 @@ namespace Mission02___Team004_09
                     }
                 }
             }
-           
+
             return output;
         }
 
