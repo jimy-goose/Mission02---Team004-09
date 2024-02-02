@@ -63,14 +63,22 @@ namespace Mission02___Team004_09
             bool over = false;
             string scen1 = theBoard[0] + theBoard[1] + theBoard[2];
             string scen2 = theBoard[3] + theBoard[4] + theBoard[5];
-            string scen3 = theBoard[6] + theBoard[7] + theBoard[8]; 
-            string scen4 = theBoard[0] + theBoard[3] + theBoard[6]; 
+            string scen3 = theBoard[6] + theBoard[7] + theBoard[8];
+            string scen4 = theBoard[0] + theBoard[3] + theBoard[6];
             string scen5 = theBoard[1] + theBoard[4] + theBoard[7];
             string scen6 = theBoard[2] + theBoard[5] + theBoard[8];
             string scen7 = theBoard[0] + theBoard[4] + theBoard[8];
             string scen8 = theBoard[2] + theBoard[4] + theBoard[6];
             int whatScen = 0;
-
+            over = true;
+            for (int i = 0; i < theBoard.Length; i++)
+            {
+                if (theBoard[i] == null) { over = false; }
+            }
+            if (over)
+            {
+                whatScen = -1;
+            }
             if (scen1 == "XXX" || scen1 == "OOO")
             {
                 over = true;
@@ -129,7 +137,8 @@ namespace Mission02___Team004_09
                 {
                     Console.WriteLine("X's won");
                 }
-            } else if (whatScen == 2)
+            }
+            else if (whatScen == 2)
             {
                 if (scen2 == "OOO")
                 {
@@ -139,7 +148,8 @@ namespace Mission02___Team004_09
                 {
                     Console.WriteLine("X's won");
                 }
-            } else if (whatScen ==3)
+            }
+            else if (whatScen == 3)
             {
                 if (scen3 == "OOO")
                 {
@@ -149,7 +159,8 @@ namespace Mission02___Team004_09
                 {
                     Console.WriteLine("X's won");
                 }
-            } else if (whatScen == 4)
+            }
+            else if (whatScen == 4)
             {
                 if (scen4 == "OOO")
                 {
@@ -159,7 +170,8 @@ namespace Mission02___Team004_09
                 {
                     Console.WriteLine("X's won");
                 }
-            } else if (whatScen == 5)
+            }
+            else if (whatScen == 5)
             {
                 if (scen5 == "OOO")
                 {
@@ -169,7 +181,8 @@ namespace Mission02___Team004_09
                 {
                     Console.WriteLine("X's won");
                 }
-            } else if (whatScen == 6)
+            }
+            else if (whatScen == 6)
             {
                 if (scen6 == "OOO")
                 {
@@ -179,7 +192,8 @@ namespace Mission02___Team004_09
                 {
                     Console.WriteLine("X's won");
                 }
-            } else if (whatScen == 7)
+            }
+            else if (whatScen == 7)
             {
                 if (scen7 == "OOO")
                 {
@@ -189,7 +203,8 @@ namespace Mission02___Team004_09
                 {
                     Console.WriteLine("X's won");
                 }
-            } else if (whatScen == 8)
+            }
+            else if (whatScen == 8)
             {
                 if (scen8 == "OOO")
                 {
@@ -199,6 +214,10 @@ namespace Mission02___Team004_09
                 {
                     Console.WriteLine("X's won");
                 }
+            }
+            else if (whatScen == -1)
+            {
+                Console.WriteLine("You tied!!!");
             }
 
             return over;
