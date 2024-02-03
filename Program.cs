@@ -31,7 +31,7 @@ public class Driver
         Console.WriteLine("c  | | ");
         do
         {
-            Console.WriteLine("Player " + (I + 1) + "'s Turn. Please enter where you would like to play." + "(e.g. a1, b3");
+            Console.WriteLine("Player " + (I + 1) + "'s Turn. Please enter where you would like to play." + "(e.g. a1, b3, c2)");
             playerChoice = Console.ReadLine();
             if (playerChoice.Length < 2 || playerChoice.Length > 2)
             {
