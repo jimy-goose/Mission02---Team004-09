@@ -11,7 +11,7 @@ namespace Mission02___Team004_09
         string[] board;
         public Board(string[] theBoard)
         {
-                this.board = theBoard;      
+            this.board = theBoard;      
         }
         public string ChangeBoard(string[] theBoard)
         {

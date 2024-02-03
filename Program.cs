@@ -12,15 +12,7 @@ public class Driver
 
         string[] board = new string[9];
         string[] guessed = new string[9];
-        for (int i = 0; i < 6; i++)
-        {
-            board[i] = "_";
-        }
-        for (int i = 6; i < 9; i++)
-        {
-            board[i] = " ";
-        }
-
+        
         Board b = new Board(board);
 
         string playerChoice = "";
