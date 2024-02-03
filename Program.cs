@@ -6,7 +6,8 @@ public class Driver
 {
     public static void Main()
     {
-
+        //This Game was written by group 4-9 (James, Nick, Thomas, Sawyer)
+        //you can play tic tac toe in it!
        
         Console.WriteLine("Welcome to Tic Tac Toe!");
 
