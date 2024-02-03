@@ -9,10 +9,13 @@ namespace Mission02___Team004_09
     internal class Board
     {
         string[] board;
+
+        // constructor
         public Board(string[] theBoard)
         {
             this.board = theBoard;      
         }
+        //recieves game board and prints the board out.
         public string ChangeBoard(string[] theBoard)
         {
 
@@ -58,6 +61,7 @@ namespace Mission02___Team004_09
             return output;
         }
 
+        //checks to see if any of the winning/tie scenarios are met. and determines who wins
         public bool checkBoard(string[] theBoard)
         {
             bool over = false;
@@ -70,6 +74,8 @@ namespace Mission02___Team004_09
             string scen7 = theBoard[0] + theBoard[4] + theBoard[8];
             string scen8 = theBoard[2] + theBoard[4] + theBoard[6];
             int whatScen = 0;
+
+            //check ties
             over = true;
             for (int i = 0; i < theBoard.Length; i++)
             {
@@ -79,6 +85,8 @@ namespace Mission02___Team004_09
             {
                 whatScen = -1;
             }
+
+            //check if anyone won
             if (scen1 == "XXX" || scen1 == "OOO")
             {
                 over = true;
